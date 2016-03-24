@@ -8,6 +8,7 @@
     {
       "name": "Person",
       "extensions": null,
+      "extends": [],
       "enums": [
         {
           "name": "PhoneType",
@@ -22,6 +23,7 @@
         {
           "name": "PhoneNumber",
           "enums": [],
+          "extends": [],
           "messages": [],
           "extensions": null,
           "fields": [
@@ -96,6 +98,7 @@
     {
       "name": "AddressBook",
       "enums": [],
+      "extends": [],
       "messages": [],
       "extensions": null,
       "fields": [

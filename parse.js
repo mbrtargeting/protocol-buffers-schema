@@ -92,6 +92,7 @@ var onmessagebody = function (tokens) {
     enums: [],
     messages: [],
     fields: [],
+    extends: [],
     extensions: null
   }
 
@@ -128,6 +129,10 @@ var onmessagebody = function (tokens) {
           body.fields.push(field)
         }
         tokens.shift()
+        break
+
+      case 'extend':
+        body.extends.push(onextend(tokens))
         break
 
       case ';':
@@ -170,6 +175,7 @@ var onmessage = function (tokens) {
   var msg = {
     name: tokens.shift(),
     enums: [],
+    extends: [],
     messages: [],
     fields: []
   }
@@ -187,6 +193,7 @@ var onmessage = function (tokens) {
       msg.enums = body.enums
       msg.messages = body.messages
       msg.fields = body.fields
+      msg.extends = body.extends
       msg.extensions = body.extensions
       return msg
     }
